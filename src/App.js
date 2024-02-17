@@ -1,9 +1,9 @@
-import ProductList from "./features/product/components/ProductList";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
     <div>
-      <ProductList />
+      <Home />
     </div>
   )
 }
