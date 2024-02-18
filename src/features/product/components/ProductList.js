@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import Pagination from '../../pagination/Pagination'
 
 const sortOptions = [
     { name: 'Most Popular', href: '#', current: true },
@@ -189,7 +190,7 @@ const ProductList = () => {
 
                 <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-5">
-                        <h1 className="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1>
+                        <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-gray-900">All Products</h1>
 
                         <div className="flex items-center">
                             <Menu as="div" className="relative inline-block text-left">
@@ -251,10 +252,6 @@ const ProductList = () => {
                     </div>
 
                     <section aria-labelledby="products-heading" className="pb-24 pt-6">
-                        <h2 id="products-heading" className="sr-only">
-                            Products
-                        </h2>
-
                         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                             {/* Filters */}
                             <form className="hidden lg:block">
@@ -307,9 +304,7 @@ const ProductList = () => {
                                 {/* Your content */}
                                 <div className="bg-white">
                                     <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
-                                        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Products</h2>
-
-                                        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                                        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                                             {products.map((product) => (
                                                 <div key={product.id} className="group relative">
                                                     <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
@@ -339,6 +334,8 @@ const ProductList = () => {
                             </div>
                         </div>
                     </section>
+                    {/* Pagination Component */}
+                    <Pagination />
                 </main>
             </div>
         </div>
