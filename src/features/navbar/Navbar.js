@@ -147,27 +147,30 @@ export default function Navbar({ children }) {
                                     ))}
                                 </div>
                                 <div className="border-t border-gray-700 pb-3 pt-4">
-                                    <div className="flex items-center px-5">
-                                        <div className="flex-shrink-0">
-                                            <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                                    <div className="flex items-center justify-between px-5">
+                                        <div className='flex'>
+                                            <div className="flex-shrink-0">
+                                                <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                                            </div>
+                                            <div className="ml-3">
+                                                <div className="text-base font-medium leading-none text-white">{user.name}</div>
+                                                <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                                            </div>
                                         </div>
-                                        <div className="ml-3">
-                                            <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                                            <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                                        <div className='relative'>
+                                            <Link to={"/cart"}>
+                                                <button
+                                                    type="button"
+                                                    className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                                >
+                                                    <span className="absolute -inset-1.5" />
+                                                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                                                </button>
+                                            </Link>
+                                            <span className="absolute -ml-3 -mt-1 inline-flex z-10 items-center rounded-full bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+                                                0
+                                            </span>
                                         </div>
-                                        <Link to={"/cart"}>
-
-                                            <button
-                                                type="button"
-                                                className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                            >
-                                                <span className="absolute -inset-1.5" />
-                                                <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                                            </button>
-                                        </Link>
-                                        <span className="mb-5 -ml-3 z-10 inline-flex items-center rounded-full bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
-                                            0
-                                        </span>
                                     </div>
                                     <div className="mt-3 space-y-1 px-2">
                                         {userNavigation.map((item) => (
@@ -201,7 +204,7 @@ export default function Navbar({ children }) {
                         {children}
                     </div>
                 </main>
-            </div>
+            </div >
         </>
     )
 }
