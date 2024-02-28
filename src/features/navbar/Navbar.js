@@ -30,15 +30,17 @@ export default function Navbar({ children }) {
                 <Disclosure as="nav" className="bg-gray-800">
                     {({ open }) => (
                         <>
-                            <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                                 <div className="flex h-16 items-center justify-between">
                                     <div className="flex items-center">
                                         <div className="flex-shrink-0">
-                                            <img
-                                                className="h-8 w-8"
-                                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                                alt="Your Company"
-                                            />
+                                            <Link to="/">
+                                                <img
+                                                    className="h-8 w-8"
+                                                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                                    alt="Your Company"
+                                                />
+                                            </Link>
                                         </div>
                                         <div className="hidden md:block">
                                             <div className="ml-10 flex items-baseline space-x-4">
@@ -192,19 +194,19 @@ export default function Navbar({ children }) {
 
                 {/* Header => E-commence */}
                 <header className="bg-white shadow">
-                    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
                         <h1 className="text-3xl font-bold tracking-tight text-gray-900">E-Commerce</h1>
                     </div>
                 </header>
 
                 {/* product list content */}
                 <main>
-                    <div className="mx-auto max-w-5xl py-6 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                         {/* Your content */}
                         {children}
                     </div>
                 </main>
-            </div >
+            </div>
         </>
     )
 }
